@@ -1,22 +1,13 @@
-# TP6 Vue.js 30/06/18 FLorian PALABOST 11301169
-
-# Résumé du projet
-   - 
-   - Début tp8 : pour le tp8 j'ai enlevé le component my address sur la page de demarrage vu qu'il n'y est pas sur le test audit du tp8. 
-
-# à corriger / a ajouter
-
-
+# Vue.js 30/06/18 FLorian PALABOST
 
 # minimapper
-
-> A Vue.js project : contenu du projet
-/build webpack config files
-/config -> index.js : main project config
-/node_modules
-/src  ->main.js app entry file, App.vue : main app component, components : ui components, asset: module asset, store ...
-/static : pure static assets
-/test
+A Vue.js project : contenu du projet
+- /build webpack config files
+- /config -> index.js : main project config
+- /node_modules
+- /src  ->main.js app entry file, App.vue : main app component, components : ui components, asset: module asset, store ...
+- /static : pure static assets
+- /test
 
 ces commandes sont définies dans package.json
 build dev mode : 
