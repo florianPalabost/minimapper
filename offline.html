@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="preload"
+    as="style"
+    onload="this.rel = 'stylesheet'"
+    href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'>
+    <link rel="stylesheet" type="text/css" href="/static/inline.css">
+    <title>minimapper - offline</title>
+  </head>
+  <body>
+      <main class="main">
+        <h1>Minimapper - Page Offline</h1>
+          <img id="planT1" src="static/images/640px-Tramway_Lyon_1-plan.svg.png" alt="plan ligne T1">
+      </main>
+      <div class="loader">
+          <svg viewBox="0 0 32 32" width="32" height="32">
+              <circle id="spinner" cx="16" cy="16" r="14" fill="none" style="   box-sizing: border-box;
+              stroke: #673AB7;
+              stroke-width: 3px;
+              -webkit-transform-origin: 50%;
+                      transform-origin: 50%;
+              -webkit-animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite;
+                      animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite;">
+              </circle>
+          </svg>
+      </div>
+      <noscript>
+        <h3 style="color: #673ab7; font-family: Helvetica; margin: 2rem;">
+          Sorry, but app is not available without javascript
+        </h3>
+      </noscript>
+    
+    <!-- built files will be auto injected -->
+    <script type="text/javascript">
+     //This is the service worker with the Cache-first network
+    //Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+    if (navigator.serviceWorker.controller) {
+      console.log('[PWA Builder] active service worker found, no need to register')
+    } else {
+    //Register the ServiceWorker
+      navigator.serviceWorker.register('pwabuilder-sw.js', {
+        scope: './'
+      }).then(function(reg) {
+        console.log('Service worker has been registered for scope:'+ reg.scope);
+      });
+    }
+      (function() {
+        'use strict';
+        var app = {
+          isLoading: true,
+          spinner: document.querySelector('.loader'),
+          container: document.querySelector('.main')
+        };
+        window.addEventListener('load', function() {
+          app.spinner.setAttribute('hidden', true);
+          app.container.removeAttribute('hidden');
+          app.isLoading = false;
+        });
+      })();
+    </script>
+  </body>
+</html>
